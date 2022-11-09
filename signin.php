@@ -48,10 +48,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = preg_replace('/[^A-Za-z0-9 ]/', '', $id);
     $pw = preg_replace('/[^A-Za-z0-9 ]/', '', $pw);
 
-
-    $argument = "./signup ". $id . " ". $pw ." ". $pw_check ." ". $name;
+    if($pw==$pw_check){	
+    $argument = "./signin ". $id . " ". $pw ." ". $pw_check ." ". $name;
     exec($argument,$output,$ret);
-echo $argument;    
+   # echo $argument;
+
+    if($ret==21)
+    {
+?>
+	    <script>alert("signin success!")</script><?php
+    }
+    if($ret==11)
+    {
+?>
+	    <script>alert("id is already exist")</script><?php
+    }
+    }
+    else{
+?>
+	    <script>alert("pw is not same")</script><?php
+    }
+    
+    
 }
 
 ?>

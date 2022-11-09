@@ -25,7 +25,7 @@ int main (int argc, char **argv) {
   }
   
   // construct query
-  commandCheck = snprintf(command, 250, "SELECT * FROM Users WHERE id = \'%s\' AND pw = \'%s\'%c", argv[1], argv[2], 59);
+  commandCheck = snprintf(command, 250, "SELECT * FROM Users WHERE id = \'%s\' AND pw = \'%s\'%c", argv[1], argv[2],59);
   
   if(strlen(argv[1]) > 10) { //username is never greater than 10 but unknown for password because hidden
   return 0;
