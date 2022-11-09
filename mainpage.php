@@ -35,7 +35,7 @@
                             </tbody>
                         </table>
                     </div>
-                <a class="test_manage_btn" href="/Group">그룹 관리</a>
+                <a class="test_manage_btn" href="/group.php">그룹 관리</a>
                 
         </div>
     </div>

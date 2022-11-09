@@ -17,13 +17,13 @@ session_start();
   $retval = 0;
   $_SESSION["connected"] = 0;
   if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $login = $_POST['login'];
-    $pass = $_POST['pass'];
-    $login = preg_replace('/[^A-Za-z0-9 ]/', '', $login);
-    $pass = preg_replace('/[^A-Za-z0-9 ]/', '', $pass);
+    $id = $_POST['id'];
+    $pw = $_POST['pw'];
+    $id = preg_replace('/[^A-Za-z0-9 ]/', '', $pw);
+    $pw = preg_replace('/[^A-Za-z0-9 ]/', '', $pw);
     
     //construct command which will be passed to exec
-    $argument = "./login ". $login . " ". $pass;
+    $argument = "./login ". $id . " ". $pw;
     
     // call login.c with entered id and password
     exec($argument, $voted, $retval);
@@ -57,7 +57,11 @@ session_start();
       $_SESSION["username"] = $login;
       $_SESSION["pass"] = $pass;
       $_SESSION["voted"] = $voted[0];
-      header("Location: main_page.php");
+?>
+<script>
+      location.replace("./mainpage.php");
+</script>
+<?php
     }
     else if ($retval == 12) {
       $_SESSION["connected"] = 0;
