@@ -19,13 +19,13 @@ int main (int argc, char **argv) {
   }
   
   //connect to database
-  if(mysql_real_connect(conn, "localhost", "root", "", "Voting", 0, NULL, 0) == NULL) {
+  if(mysql_real_connect(conn, "localhost", "root", "", "cose451", 0, NULL, 0) == NULL) {
     printf("Connection Failed\n");
     exit(1);
   }
   
   // construct query
-  commandCheck = snprintf(command, 250, "SELECT * FROM Users WHERE BINARY id = \'%s\' AND BINARY password = \'%s\'%c", argv[1], argv[2], 59);
+  commandCheck = snprintf(command, 250, "SELECT * FROM Users WHERE id = \'%s\' AND pw = \'%s\'%c", argv[1], argv[2], 59);
   
   if(strlen(argv[1]) > 10) { //username is never greater than 10 but unknown for password because hidden
   return 0;
