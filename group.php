@@ -7,7 +7,7 @@
     import {useForm, Hint, validators, minLength} from "svelte-use-form";
     const form=useForm();
 </script>
-    
+ 
 
 <div class="city_edit"> 
     <h1>자산 관리</h1>
@@ -21,7 +21,7 @@
    <form> 
 
         <div class="input" style="width: 500px; height:300px; margin-right:50px">
-            <form class="loginBox" method="POST" action="/group_deposit">
+            <form class="loginBox" method="POST" action="/deposit.php" name="deposit" >
               <div class="inputBox">
                 <input type="text" id="id" name="gid" placeholder="Enter your group id" >
               </div>
@@ -45,7 +45,7 @@
 
     
         <div class="input" style="width: 500px; height:300px; margin-left:50px" >
-            <form class="loginBox" method="POST" action="/group_withdraw">
+            <form class="loginBox" method="POST" action="/group_withdraw.php">
               <div class="inputBox">
                 <input type="text" id="id" name="group_withdraw_id" placeholder="Enter your group id" >
               </div>
