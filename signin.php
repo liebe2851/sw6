@@ -64,7 +64,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if($ret==11)
     {
 ?>
-	    <script>history.back();
+	    <script>
+	    location.replace("/index.php");
 	    alert("id is already exist");
 		    </script>
 		<?php
