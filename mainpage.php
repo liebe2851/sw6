@@ -2,16 +2,13 @@
 <link rel="stylesheet" href="global.css">
 <meta charset='utf-8'>
 </head>
-<script>
-    import {useForm, Hint, validators, minLength} from "svelte-use-form";
-    const form=useForm();
-</script>
+
 <?php 
 session_start();
 $connect = mysqli_connect('localhost', 'root', 'sjoo', 'cose451') or die("connect failed");
 $id=$_SESSION['id'];
 
-$query1= "select gid,cnt,money from (select `group` as gid ,count(*) as cnt from group_user where user='$id'  group by `group`) A right join `groups` on A.gid=`groups`.id where gid is not null;";
+$query1= "select gid,name,cnt,money from (select `group` as gid ,count(*) as cnt from group_user where user='$id'  group by `group`) A right join `groups` on A.gid=`groups`.id where gid is not null;";
 
 //echo $query1;
 
@@ -38,8 +35,9 @@ $result= mysqli_query($connect, $query1);
                         <table class="data_table">
                             <thead>
                                 <tr>
-                                    <th>번호</th>
-                                    <th>그룹명</th>
+                                    <th>번호</th>				    
+<th>그룹id</th>
+<th>그룹명</th>
                                     <th>소속 인원수</th>
                                  <th>그룹 돈</th> 
                                     
@@ -56,6 +54,7 @@ $result= mysqli_query($connect, $query1);
 <thead>
 <tr>	<th><?php echo $total;?></th>
 	<th><?php echo $rows['gid'];?></th>
+	<th><?php echo $rows['name'];?></th>
 	<th><?php echo $rows['cnt'];?></th>
 	<th><?php echo $rows['money'];?></th>
 		</tr>

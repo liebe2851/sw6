@@ -21,11 +21,13 @@ int main (int argc, char **argv) {
   char *ret;  
 
   //check for special characters
-  for(int i = 1; i<argc; i++) {
-  ret = strpbrk(argv[i], special);
+/*  for(int i = 1; i<argc; i++) {
+	  if(i!=4){
+  ret = strpbrk(argv[i], special);}
+
   if(ret) {return 0;}
   }
-  
+  */
   //connect to database
   if(mysql_real_connect(con1, "localhost", "root", "sjoo", "cose451", 0, NULL, 0) == NULL) {
     printf("Connection Failed\n");
@@ -50,10 +52,8 @@ int main (int argc, char **argv) {
   commandCheck3= snprintf(group_command, 250, "INSERT INTO group_user Values(\'%s\',\'%s\')%c" , argv[1], argv[5],59);
 
   //printf("%s",signup_command); 
-    if(strlen(argv[1]) > 10) { //username is never greater than 10 but unknown for password because hidden
-  return 0;
-  }
-  else if(mysql_real_query(con1, id_check_command, 250) != 0) { //check information
+   
+  if(mysql_real_query(con1, id_check_command, 250) != 0) { //check information
     printf("query1 failed\n");
     return 0;
   } 

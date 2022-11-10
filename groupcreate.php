@@ -8,7 +8,7 @@ session_start();
 if($_SESSION["connected"]==1){?>
 
     <div class="input">
-       <form action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> method ="post"class="joinBox">
+       <form action=<?php echo $_SERVER['PHP_SELF'];?> method ="post"class="joinBox">
             <div class="inputJBox">
                 <span class="star">*</span>
                 <input type="text" id="nickname" name="name" placeholder="그룹 이름 입력 (5 ~ 20자)" required="required" autofocus="autofocus">
@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
     $pw = $_POST['pw'];
     $pw_check = $_POST['pw_check'];
-    $name = preg_replace('/[^A-Za-z0-9 ]/', '', $name);
+    $name=htmlentities($name);
     $id = preg_replace('/[^A-Za-z0-9 ]/', '', $id);
     $pw = preg_replace('/[^A-Za-z0-9 ]/', '', $pw);
     $user_id=$_SESSION['id'];
