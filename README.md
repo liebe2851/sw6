@@ -11,13 +11,13 @@ aws free 티어 간당간당해요
 
 hi
 
-I use aws free tier, but I almost use.
+I'm almost out of my AWS free tier usage.. :(
 
-If you use python script or tool, I will lose my money.
+If you use python script or automatic tool, it will cost some payment..
 
-please use tool or script on your computer.
+Please use automatic tool or script on your computer or local environment.
 
-thankyou!
+thank you!
  
 ### compile option
 
