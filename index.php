@@ -46,6 +46,8 @@ session_start();
 	<button type="submit" class="loginBtn"><strong>로그인</strong></button>
 	</div>      
 </a>
+<div class='btn'>
+<p class="loginBtn" onclick="location.href='./signin.php'" style="padding: 10px 35px; border-radius:5px !important; font-size: 13px;"><strong>회원가입</strong></p>
     </form>
     
     <?php
@@ -54,8 +56,8 @@ session_start();
     if($retval == 11) {
       echo '<div class="info">Login success!</div>';
       $_SESSION["connected"] = 1;
-      $_SESSION["username"] = $login;
-      $_SESSION["pass"] = $pass;
+      $_SESSION["id"] = $id;
+      
       $_SESSION["voted"] = $voted[0];
 ?>
 <script>

@@ -7,11 +7,13 @@
     const form=useForm();
 </script>
     
-    
 <form use:form>
     <div class="main_pic_bg">
         <div class="city_edit"> 
-            <h1>자산 관리</h1>
+	    <h1>자산 관리</h1>
+	    <b><?php 
+	session_start();
+	echo $_SESSION['id']; ?> 님 안녕하세요! </b>
             <p>속한 그룹과 잔고를 확인할 수 있습니다.</p>
             <div class="mypage_box">
                     <div class="mypage_title">
@@ -36,10 +38,20 @@
                         </table>
                     </div>
                 <a class="test_manage_btn" href="/group.php">그룹 관리</a>
-                
+		<a class="test_manage_btn" href="/groupcreate.php">그룹생성</a>
+<a class="test_manage_btn" href="/groupinvite.php">그룹초대</a>
         </div>
     </div>
 </form>
+
+<?php
+$connect = mysqli_connect('localhost', 'root', '', 'cose451') or die("connect failed");
+
+$query1 = "select * from Users where id='$id'";
+$query2 = "select * from Users where id='$id'";
+
+?>
+
 
 <!--
 <div class="justBox">

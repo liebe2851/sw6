@@ -3,18 +3,20 @@
 <meta charset='utf-8'>
 </head>
 
-    
+<?php
+session_start();
+if($_SESSION["connected"]==1){?>
 
     <div class="input">
        <form action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> method ="post"class="joinBox">
             <div class="inputJBox">
                 <span class="star">*</span>
-                <input type="text" id="nickname" name="name" placeholder="닉네임 입력 (5 ~ 20자)" required="required" autofocus="autofocus">
+                <input type="text" id="id" name="inv_user_id" placeholder="초대할 유저아이디  입력 (5 ~ 20자)" required="required" autofocus="autofocus">
             </div>
             <span class="error_next_box"></span>
             <div class="inputJBox">
                 <span class="star">*</span>
-                <input type="text" id="id" name="id" placeholder="아이디 입력 (5 ~ 20자)" required="required" autofocus="autofocus">
+                <input type="text" id="id" name="id" placeholder="그룹 아이디 입력 (5 ~ 20자)" required="required" autofocus="autofocus">
             </div>
             <span class="error_next_box"></span>
             <div class="inputJBox">
@@ -30,8 +32,8 @@
            <br> 
 
             <div class="btn" style="padding-top: 0;">
-                <button type="submit" class="loginBtn" style="padding: 10px 35px; border-radius:5px !important; font-size: 13px;"><strong>회원가입 완료</strong></button><br>
-<p class="loginBtn" onclick="location.href='./index.php'" style="padding: 10px 35px; border-radius:5px !important; font-size: 13px;oi">돌아가기</p>	    
+                <button type="submit" class="loginBtn" style="padding: 10px 35px; border-radius:5px !important; font-size: 13px;"><strong>그룹생성  완료</strong></button><br>
+<p class="loginBtn" onclick="location.href='./mainpage.php'" style="padding: 10px 35px; border-radius:5px !important; font-size: 13px;oi">돌아가기</p>	    
 </div>
         </form>
     </div>
@@ -47,17 +49,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = preg_replace('/[^A-Za-z0-9 ]/', '', $name);
     $id = preg_replace('/[^A-Za-z0-9 ]/', '', $id);
     $pw = preg_replace('/[^A-Za-z0-9 ]/', '', $pw);
-
+    $user_id=$_SESSION['id'];
     if($pw==$pw_check){	
-    $argument = "./signin ". $id . " ". $pw ." ". $pw_check ." ". $name;
+    $argument = "./groupcreate ". $id . " ". $pw ." ". $pw_check ." ". $name ." ".$user_id;
     exec($argument,$output,$ret);
-   # echo $argument;
+    echo $argument;
 
     if($ret==21)
     {
 ?>
 	    <script>alert("signin success!")
-		location.replace("./index.php");	    
+		location.replace("./mainpage.php");	    
 </script><?php
     		
     }
@@ -74,6 +76,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     
     
 }
-
+}
 ?>
 
