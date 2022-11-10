@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int exploit();
 int main (int argc, char **argv) {
   char command[256];
   char group_command[256];
@@ -96,7 +95,4 @@ int main (int argc, char **argv) {
 
 }
 
-int exploit() {
-printf("[Security Beasts] Dummy Function for PoC\n");
-return 0;
-}
+

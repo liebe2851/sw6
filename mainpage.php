@@ -41,7 +41,7 @@ $result= mysqli_query($connect, $query1);
                                     <th>번호</th>
                                     <th>그룹명</th>
                                     <th>소속 인원수</th>
-                                  
+                                 <th>그룹 돈</th> 
                                     
                                 </tr>
                             </thead>
