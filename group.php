@@ -70,8 +70,12 @@
           </div>
       </form>
 </div>
+<<<<<<< HEAD
 
 <div class="loginBtn" style="width:10%;height:50px;margin:auto;margin-top:50px" onclick="location.href='/mainpage.php'"> 돌아가기 </div>
+=======
+<p class="loginBtn" style="width:10%;height:50px;margin:auto;margin-top:50px" onclick="location.href='/mainpage.php'"> 돌아가기 </p>
+>>>>>>> fba6bd6ecdd662f291cd3fcbb0583010ce2e5faa
 <br><br><br><br>
 <!--
 <div class="city_edit"> 
