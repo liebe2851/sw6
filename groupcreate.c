@@ -45,7 +45,7 @@ int main (int argc, char **argv) {
   // construct query
   commandCheck1 = snprintf(id_check_command, 250, "SELECT * FROM `groups` WHERE id = \'%s\'%c", argv[1],59);
  
-  commandCheck2= snprintf(signup_command, 250, "INSERT INTO `groups` Values(\'%s\',\'%s\',\'%s\')%c" , argv[1], argv[2], argv[4],59);
+  commandCheck2= snprintf(signup_command, 250, "INSERT INTO `groups` Values(\'%s\',\'%s\',\'%s\',0)%c" , argv[1], argv[2], argv[4],59);
 
   commandCheck3= snprintf(group_command, 250, "INSERT INTO group_user Values(\'%s\',\'%s\')%c" , argv[1], argv[5],59);
 

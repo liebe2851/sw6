@@ -18,25 +18,31 @@
 
 <div class="justBox">
 
-    <form use:form>
+   <form> 
 
         <div class="input" style="width: 500px; height:300px; margin-right:50px">
             <form class="loginBox" method="POST" action="/group_deposit">
               <div class="inputBox">
-                <input type="text" id="id" name="group_deposit_id" placeholder="Enter your group id" >
+                <input type="text" id="id" name="gid" placeholder="Enter your group id" >
               </div>
               <div class="inputBox">
-                <input type="password" id="id" name="groupd_deposit_amount" placeholder="Enter amount" >
+                <input type="password" id="id" name="group_pw" placeholder="Enter group pw" >
+	      </div>
+
+<div class="inputBox">
+                <input type="int" id="id" name="amount" placeholder="Enter amount" >
               </div>
+
               <div class="btn">
                 <button type="submit" class="loginBtn"><strong>Deposit</strong></button><br>
               </div>
-            </form>
             
-          </div>
+</form>
+</div>	    
+          
       </form>
     
-      <form use:form>
+
     
         <div class="input" style="width: 500px; height:300px; margin-left:50px" >
             <form class="loginBox" method="POST" action="/group_withdraw">
@@ -44,11 +50,21 @@
                 <input type="text" id="id" name="group_withdraw_id" placeholder="Enter your group id" >
               </div>
               <div class="inputBox">
-                <input type="password" id="id" name="group_withdraw_amount" placeholder="Enter amount" >
+                <input type="password" id="id" name="group_pw" placeholder="Enter pw" >
+
+	      </div>
+
+
+<div class="inputBox">
+                <input type="int" id="id" name="amount" placeholder="Enter amount" >
+
+
               </div>
-              <div class="btn">
+
+	      <div class="btn">
                 <button type="submit" class="loginBtn"><strong>Withdraw</strong></button><br>
-              </div>
+
+ </div>
             </form>
             
           </div>

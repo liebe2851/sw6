@@ -8,6 +8,12 @@
 </script>
 <?php 
 session_start();
+$connect = mysqli_connect('localhost', 'root', '', 'cose451') or die("connect failed");
+$id=$_SESSION['id'];
+$query1 = "select `group`,count(*) from group_user where `user`='$id' group by `group`;";
+$result= mysqli_query($connect, $query1);
+//echo $query1;
+
 ?>
 <form use:form>
     <div class="main_pic_bg">
@@ -30,14 +36,31 @@ session_start();
                                     <th>번호</th>
                                     <th>그룹명</th>
                                     <th>소속 인원수</th>
-                                    <th>잔고</th>
-                                    <th>삭제</th>
+                                  
+                                    
                                 </tr>
                             </thead>
                             <tbody id="mytable">
+</tbody>
+</table>
+<?php
+	 $total = mysqli_num_rows($result);
+	while ($rows = mysqli_fetch_assoc($result)) { 
+?>
+<table class="data_table">
+<thead>
+<tr>	<th><?php echo $total;?></th>
+	<th><?php echo $rows['group'];?></th>
+	<th><?php echo $rows['count(*)'];?></th>
+		</tr>
+<tbody id="mytable">
+</thead>
+<br>	
 
-                            </tbody>
-                        </table>
+<?php
+$total--;	}?>
+		</table>
+     
                     </div>
                 <a class="test_manage_btn" href="/group.php">그룹 관리</a>
 		<a class="test_manage_btn" href="/groupcreate.php">그룹생성</a>
@@ -47,6 +70,11 @@ session_start();
 </form>
 
 <?php
+		while ($rows = mysqli_fetch_assoc($result)) { 
+			echo $rows['`group`'];
+			echo $rows['count(*)'];
+		}
+/*		
 $connect = mysqli_connect('localhost', 'root', '', 'cose451') or die("connect failed");
 $id=$_SESSION['id'];
 $query1 = "select `group`,count(*) from group_user where `user`='$id' group by `group`";
@@ -54,9 +82,8 @@ $result= mysqli_query($connect, $query);
 echo $query1;
 echo $result;
 $query2 = "select * from Users where id='$id'";
-
+*/
 ?>
-
 
 <!--
 <div class="justBox">
