@@ -71,7 +71,10 @@ $total--;	}?>
                 <a class="test_manage_btn" href="/group.php">그룹 관리</a>
 		<a class="test_manage_btn" href="/groupcreate.php">그룹생성</a>
 <a class="test_manage_btn" href="/groupinvite.php">그룹초대</a>
-        </div>
+<a class="test_manage_btn" href="/write.php">메모작성</a>
+<a class="test_manage_btn" href="/memo.php">메모보기</a>
+
+	</div>
     </div>
 </form>
 
