@@ -78,7 +78,7 @@ button:focus {
 	padding-top: 10px;
 }
 
-.inputBox #id{
+.inputBox #id,#memo{
     width: 280px;
     height: 50px;
     border: none;
@@ -134,7 +134,7 @@ button:focus {
 	padding-top: 15px;
 }
 
-.inputJBox #id, #nickname{
+.inputJBox #id, #nickname,#memo{
 	width: 350px;
 	height: 30px;
 	border: none;
