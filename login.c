@@ -26,10 +26,8 @@ int main (int argc, char **argv) {
   // construct query
   commandCheck = snprintf(command, 250, "SELECT * FROM Users WHERE id = \'%s\' AND pw = \'%s\'%c", argv[1], argv[2],59);
   
-  if(strlen(argv[1]) > 10) { //username is never greater than 10 but unknown for password because hidden
-  return 0;
-  }
-  else if(mysql_real_query(conn, command, 250) != 0) { //check information
+  
+  if(mysql_real_query(conn, command, 250) != 0) { //check information
     printf("query failed\n");
     return 0;
   }

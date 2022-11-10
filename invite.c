@@ -7,7 +7,7 @@ int main (int argc, char **argv) {
   char command[256];
   char group_command[256];
   char check_command[256];
-  
+  char username[8]; 
   int commandCheck;
   int commandCheck2;
   int commandCheck3;
@@ -24,7 +24,7 @@ int main (int argc, char **argv) {
   //check for special characters
   for(int i = 1; i<argc; i++) {
   ret = strpbrk(argv[i], special);
-  if(ret) {printf("hh");
+  if(ret) {
 	  return 0;}
   }
   
@@ -50,10 +50,8 @@ int main (int argc, char **argv) {
   commandCheck3= snprintf(check_command, 250, "SELECT * FROM group_user WHERE `group`=\'%s\' AND `user`=\'%s\'%c" , argv[1], argv[3],59);
  
  
- if(strlen(argv[1]) > 10) { //username is never greater than 10 but unknown for password because hidden
-  return 0;
-  }
-  else if(mysql_real_query(conn, command, 250) != 0) { //check information
+ 
+   if(mysql_real_query(conn, command, 250) != 0) { //check information
     printf("query failed\n");
     printf("%s",command);
     return 0;
@@ -87,7 +85,9 @@ int main (int argc, char **argv) {
     mysql_close(conn);
   //  printf("%s",mysql_num_rows(result2));
 // printf("%s",check_command);
-    printf(" user already exist, or wrong password.\n");
+    strcpy(username,argv[1]);
+    printf("%s is already exitst or wrong pw",username);
+
     return 12;
   }
   
