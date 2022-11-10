@@ -19,7 +19,7 @@ session_start();
   if($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
     $pw = $_POST['pw'];
-    $id = preg_replace('/[^A-Za-z0-9 ]/', '', $id);
+    #$id = preg_replace('/[^A-Za-z0-9 ]/', '', $id);
     $pw = preg_replace('/[^A-Za-z0-9 ]/', '', $pw);
     
     //construct command which will be passed to exec
@@ -51,8 +51,9 @@ session_start();
     </form>
     
 <?php
-  echo json_encode($output);
-  echo $argument;
+  #echo json_encode($output);
+
+  #echo $argument;
 
     // check whether login was successful
     // login.c returns 11 if successful, 12 otherwise
@@ -61,7 +62,7 @@ session_start();
       $_SESSION["connected"] = 1;
       $_SESSION["id"] = $id;
       
-      $_SESSION["voted"] = $voted[0];
+      
 ?>
 <script>
       location.replace("./mainpage.php");
@@ -70,7 +71,7 @@ session_start();
     }
     else if ($retval == 12) {
       $_SESSION["connected"] = 0;
-      echo '<div class="wrong">'.$voted[0].'</div>';
+      echo '<div class="wrong">'.json_encode($output).'</div>';
     }
     ?>
   </div> 

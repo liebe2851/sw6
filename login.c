@@ -8,7 +8,7 @@ int main (int argc, char **argv) {
   int commandCheck;
   MYSQL_ROW row;
   MYSQL *conn = mysql_init(NULL);
-  const char special[] = "!@#$%^&*(){}:;<>',.-";
+  const char special[] = "!@#$^&*(){}:;<>',.-";
   char *ret;  
 
   //check for special characters
@@ -43,7 +43,7 @@ int main (int argc, char **argv) {
   }
   else {
     mysql_close(conn);
-    printf("%s", argv[1]);
+    printf( argv[1]);
     printf(" does not exist, or wrong password.\n");
     return 12;
   }

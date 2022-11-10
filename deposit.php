@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$connect = mysqli_connect("localhost", "root", "", "cose451") or die("connect failed");
+$connect = mysqli_connect("localhost", "root", "sjoo", "cose451") or die("connect failed");
 
 //입력 받은 id와 password
 $id = $_POST['gid'];
