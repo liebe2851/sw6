@@ -9,7 +9,16 @@ aws free 티어 간당간당해요
 
 저 10만원 빠져나가ㅏ요....
 
+hi
 
+I use aws free tier, but I almost use.
+
+If you use python script or tool, I will lose my money.
+
+please use tool or script on your computer.
+
+thankyou!
+ 
 ### compile option
 
 ```
