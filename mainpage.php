@@ -6,7 +6,9 @@
     import {useForm, Hint, validators, minLength} from "svelte-use-form";
     const form=useForm();
 </script>
-    
+<?php 
+session_start();
+?>
 <form use:form>
     <div class="main_pic_bg">
         <div class="city_edit"> 
@@ -46,8 +48,11 @@
 
 <?php
 $connect = mysqli_connect('localhost', 'root', '', 'cose451') or die("connect failed");
-
-$query1 = "select * from Users where id='$id'";
+$id=$_SESSION['id'];
+$query1 = "select `group`,count(*) from group_user where `user`='$id' group by `group`";
+$result= mysqli_query($connect, $query);
+echo $query1;
+echo $result;
 $query2 = "select * from Users where id='$id'";
 
 ?>

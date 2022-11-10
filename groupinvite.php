@@ -23,16 +23,12 @@ if($_SESSION["connected"]==1){?>
                 <span class="star">*</span>
                 <input type="password" id="pw" name="pw" placeholder="비밀번호 입력 (문자, 숫자, 특수문자 포함 8 ~ 16자)" required="required" autofocus="autofocus">
             </div>
-            <span class="error_next_box"></span>
-            <div class="inputJBox">
-                <span class="star">*</span>
-                <input type="password" id="pw_check" name="pw_check" placeholder="비밀번호 재입력" required="required" autofocus="autofocus">
-            </div>
+           
             <span class="error_next_box"></span>
            <br> 
 
             <div class="btn" style="padding-top: 0;">
-                <button type="submit" class="loginBtn" style="padding: 10px 35px; border-radius:5px !important; font-size: 13px;"><strong>그룹생성  완료</strong></button><br>
+                <button type="submit" class="loginBtn" style="padding: 10px 35px; border-radius:5px !important; font-size: 13px;"><strong>그룹초대  완료</strong></button><br>
 <p class="loginBtn" onclick="location.href='./mainpage.php'" style="padding: 10px 35px; border-radius:5px !important; font-size: 13px;oi">돌아가기</p>	    
 </div>
         </form>
@@ -42,20 +38,20 @@ if($_SESSION["connected"]==1){?>
 <?php
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
+    $inv_user_id = $_POST['inv_user_id'];
     $id = $_POST['id'];
     $pw = $_POST['pw'];
     $pw_check = $_POST['pw_check'];
-    $name = preg_replace('/[^A-Za-z0-9 ]/', '', $name);
+    $inv_user_id = preg_replace('/[^A-Za-z0-9 ]/', '', $inv_user_id);
     $id = preg_replace('/[^A-Za-z0-9 ]/', '', $id);
     $pw = preg_replace('/[^A-Za-z0-9 ]/', '', $pw);
     $user_id=$_SESSION['id'];
-    if($pw==$pw_check){	
-    $argument = "./groupcreate ". $id . " ". $pw ." ". $pw_check ." ". $name ." ".$user_id;
+    
+    $argument = "./invite ". $id . " ". $pw ." ".  $inv_user_id ." ".$user_id;
     exec($argument,$output,$ret);
-    echo $argument;
+   // echo $argument;
 
-    if($ret==21)
+    if($ret==11)
     {
 ?>
 	    <script>alert("signin success!")
@@ -63,19 +59,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </script><?php
     		
     }
-    if($ret==11)
+    if($ret==12)
     {
 ?>
-	    <script>alert("id is already exist")</script><?php
+	    <script>alert("already exist or wrong pw")</script><?php
+	    #echo json_encode($output);
     }
-    }
-    else{
-?>
-	    <script>alert("pw is not same")</script><?php
-    }
+    else{echo json_encode($output);}    
+}
+
+}
+   
     
     
-}
-}
 ?>
 
