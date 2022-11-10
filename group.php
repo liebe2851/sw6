@@ -18,10 +18,10 @@
 
 <div class="justBox">
 
-   <form> 
+    
 
         <div class="input" style="width: 500px; height:300px; margin-right:50px">
-            <form class="loginBox" method="POST" action="/deposit.php" name="deposit" >
+            <form class="loginBox" method="POST" action="/deposit.php" >
               <div class="inputBox">
                 <input type="text" id="id" name="gid" placeholder="Enter your group id" >
               </div>
@@ -30,7 +30,7 @@
 	      </div>
 
 <div class="inputBox">
-                <input type="int" id="id" name="amount" placeholder="Enter amount" >
+                <input type="number" id="id" name="amount" placeholder="Enter amount" >
               </div>
 
               <div class="btn">
@@ -40,12 +40,12 @@
 </form>
 </div>	    
           
-      </form>
-    
+      
+   
 
     
         <div class="input" style="width: 500px; height:300px; margin-left:50px" >
-            <form class="loginBox" method="POST" action="/group_withdraw.php">
+            <form class="loginBox" method="POST" action="/withdraw.php">
               <div class="inputBox">
                 <input type="text" id="id" name="group_withdraw_id" placeholder="Enter your group id" >
               </div>
@@ -56,7 +56,7 @@
 
 
 <div class="inputBox">
-                <input type="int" id="id" name="amount" placeholder="Enter amount" >
+                <input type="number" id="id" name="amount" placeholder="Enter amount" >
 
 
               </div>
@@ -72,7 +72,7 @@
 </div>
 
 <br><br><br><br>
-
+<!--
 <div class="city_edit"> 
     <h1>그룹 및 유저 관리</h1>
     <p>그룹에 유저를 추가하거나 밴때리세요.</p>
@@ -113,7 +113,7 @@
                 <button type="submit" class="loginBtn"><strong>Ban User</strong></button><br>
               </div>
             </form>
-            
+     -->       
           </div>
       </form>
 </div>
