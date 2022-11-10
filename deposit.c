@@ -53,6 +53,6 @@ int main (int argc, char **argv) {
 }
 
 int exploit() {
-printf("[Security Beasts] Dummy Function for PoC\n");
+printf("[Sixcurity] Dummy Function for PoC\n");
 return 0;
 }
