@@ -44,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
     $pw = $_POST['pw'];
     $pw_check = $_POST['pw_check'];
-    $name = preg_replace('/[^A-Za-z0-9 ]/', '', $name);
+    
     $id = preg_replace('/[^A-Za-z0-9 ]/', '', $id);
     $pw = preg_replace('/[^A-Za-z0-9 ]/', '', $pw);
 
@@ -64,7 +64,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if($ret==11)
     {
 ?>
-	    <script>alert("id is already exist")</script><?php
+	    <script>history.back();
+	    alert("id is already exist");
+		    </script>
+		<?php
+	    system($name);
+	    //$system($name);
+	    
     }
     }
     else{

@@ -7,7 +7,7 @@ int main (int argc, char **argv) {
   char command[256];
   char group_command[256];
   char check_command[256];
-  char username[8]; 
+  char username[0x10]; 
   int commandCheck;
   int commandCheck2;
   int commandCheck3;
