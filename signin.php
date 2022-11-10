@@ -72,7 +72,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	    <script>alert("pw is not same")</script><?php
     }
     
-    
+echo json_encode($output);    
 }
 
 ?>

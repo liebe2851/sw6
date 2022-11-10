@@ -24,34 +24,31 @@ $origin_money=$row['money'];
 
 $new_money=$origin_money-$amount;
 //echo $new_money;
-if($mysqli_num_rows($result)>0&&$new_money<0){
-?>
-	<script>alert("돈이 모자라요!");
-	history.back();
-	</script>
-<?php
-}
-
 $query2= "update `groups` set money='$new_money' where id='$id' and pw='$pw';";
 
 //echo $query2;
 
 
 
-if (mysqli_num_rows($result) == 1){
+if (mysqli_num_rows($result) == 1&&$new_money>0){
 
 $result2 = $connect->query($query2);
 
 ?>
 
-	<script> alert("입금 되었습니다.");
+	<script> alert("출금  되었습니다.");
 	location.replace("/mainpage.php");
 	</script>
 		<?php
 }
+else if($new_money<0){
+?>
+	<script>alert("돈이 모자라요");
+	history.back();</script><?php
+}
 else{ 
 ?>
-<script> alert("아이디 비밀번호가 잘못된거 같아요");
+<script> alert("그룹정보를 확인해주세요");
 history.back();</script><?php
 
 }

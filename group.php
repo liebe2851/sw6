@@ -71,6 +71,7 @@
       </form>
 </div>
 
+<p class="loginBtn" onclick="location.href='/mainpage.php'">
 <br><br><br><br>
 <!--
 <div class="city_edit"> 

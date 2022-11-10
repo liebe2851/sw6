@@ -19,14 +19,14 @@ session_start();
   if($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
     $pw = $_POST['pw'];
-    $id = preg_replace('/[^A-Za-z0-9 ]/', '', $pw);
+    $id = preg_replace('/[^A-Za-z0-9 ]/', '', $id);
     $pw = preg_replace('/[^A-Za-z0-9 ]/', '', $pw);
     
     //construct command which will be passed to exec
     $argument = "./login ". $id . " ". $pw;
     
     // call login.c with entered id and password
-    exec($argument, $voted, $retval);
+    exec($argument, $output, $retval);
     
   }
   ?>
@@ -50,7 +50,10 @@ session_start();
 <p class="loginBtn" onclick="location.href='./signin.php'" style="padding: 10px 35px; border-radius:5px !important; font-size: 13px;"><strong>회원가입</strong></p>
     </form>
     
-    <?php
+<?php
+  echo json_encode($output);
+  echo $argument;
+
     // check whether login was successful
     // login.c returns 11 if successful, 12 otherwise
     if($retval == 11) {

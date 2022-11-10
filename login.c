@@ -19,7 +19,7 @@ int main (int argc, char **argv) {
   }
   
   //connect to database
-  if(mysql_real_connect(conn, "localhost", "root", "", "cose451", 0, NULL, 0) == NULL) {
+  if(mysql_real_connect(conn, "localhost", "root", "sjoo", "cose451", 0, NULL, 0) == NULL) {
     printf("Connection Failed\n");
     exit(1);
   }

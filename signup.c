@@ -23,11 +23,11 @@ int main (int argc, char **argv) {
   }
   
   //connect to database
-  if(mysql_real_connect(con1, "localhost", "root", "", "cose451", 0, NULL, 0) == NULL) {
+  if(mysql_real_connect(con1, "localhost", "root", "sjoo", "cose451", 0, NULL, 0) == NULL) {
     printf("Connection Failed\n");
     exit(1);
   }
-   if(mysql_real_connect(con2, "localhost", "root", "", "cose451", 0, NULL, 0) == NULL) {
+   if(mysql_real_connect(con2, "localhost", "root", "sjoo", "cose451", 0, NULL, 0) == NULL) {
     printf("Connection Failed\n");
     exit(1);
   }

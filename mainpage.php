@@ -8,13 +8,18 @@
 </script>
 <?php 
 session_start();
-$connect = mysqli_connect('localhost', 'root', '', 'cose451') or die("connect failed");
+$connect = mysqli_connect('localhost', 'root', 'sjoo', 'cose451') or die("connect failed");
 $id=$_SESSION['id'];
-$query1 = "select `group`,count(*) from group_user where `user`='$id' group by `group`;";
+
+$query1= "select gid,cnt,money from (select `group` as gid ,count(*) as cnt from group_user where user='$id'  group by `group`) A right join `groups` on A.gid=`groups`.id where gid is not null;";
+
+//echo $query1;
+
 $result= mysqli_query($connect, $query1);
 //echo $query1;
 
 ?>
+
 <form use:form>
     <div class="main_pic_bg">
         <div class="city_edit"> 
@@ -50,8 +55,9 @@ $result= mysqli_query($connect, $query1);
 <table class="data_table">
 <thead>
 <tr>	<th><?php echo $total;?></th>
-	<th><?php echo $rows['group'];?></th>
-	<th><?php echo $rows['count(*)'];?></th>
+	<th><?php echo $rows['gid'];?></th>
+	<th><?php echo $rows['cnt'];?></th>
+	<th><?php echo $rows['money'];?></th>
 		</tr>
 <tbody id="mytable">
 </thead>
