@@ -35,11 +35,11 @@ $result= mysqli_query($connect, $query1);
                         <table class="data_table">
                             <thead>
                                 <tr>
-                                    <th>번호</th>				    
-<th>그룹id</th>
-<th>그룹명</th>
-                                    <th>소속 인원수</th>
-                                 <th>그룹 돈</th> 
+                                    <th width="10%">번호</th>				    
+                                    <th width="30%">그룹id</th>
+                                    <th width="30%">그룹명</th>
+                                    <th width="10%">소속 인원수</th>
+                                    <th width="20%">그룹 돈</th> 
                                     
                                 </tr>
                             </thead>
@@ -52,12 +52,13 @@ $result= mysqli_query($connect, $query1);
 ?>
 <table class="data_table">
 <thead>
-<tr>	<th><?php echo $total;?></th>
-	<th><?php echo $rows['gid'];?></th>
-	<th><?php echo $rows['name'];?></th>
-	<th><?php echo $rows['cnt'];?></th>
-	<th><?php echo $rows['money'];?></th>
-		</tr>
+<tr>	
+  <th width="10%"><?php echo $total;?></th>
+	<th width="30%"><?php echo $rows['gid'];?></th>
+	<th width="30%"><?php echo $rows['name'];?></th>
+	<th width="10%"><?php echo $rows['cnt'];?></th>
+	<th width="20%"><?php echo $rows['money'];?></th>		
+</tr>
 <tbody id="mytable">
 </thead>
 <br>	
