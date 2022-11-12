@@ -36,7 +36,12 @@ sudo service apache2 restart
 ```
 you can see Apache2 Ubuntu Default Page on localhost
 
-# git pull
+# git pull and make
+```
+make clean
+make
+```
+
 
 
 
