@@ -1,3 +1,38 @@
+# Set Up
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install mysql-server
+sudo apt-get install apache2 
+sudo apt-get install php
+```
+
+if you can't start mysql
+```
+sudo /etc/init.d/mysql start
+```
+
+# MYSQL
+### start mysql
+```
+create user root@'%' identified by 'sjoo';
+FLUSH PRIVILEGES;
+create database cose451;
+```
+
+### create table
+```
+use cose451;
+create table `Users`(`id` char(100) , `pw` char(100),`name` char(100));
+create table `groups`(`id` char(100), `pw` char(100), `name` text(100), `money` int(100) default 0);
+create table group_user(`group` char(100),user char(100));
+create table board(memo text(100),id char(100));
+```
+
+#Apache
+
+
+
 http://13.209.70.52/
 
 안녕하세요...
