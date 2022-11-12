@@ -33,10 +33,13 @@ create table board(memo text(100),id char(100));
 # Apache
 ```
 sudo service apache2 restart
+
+cd /var/www/html
 ```
 you can see Apache2 Ubuntu Default Page on localhost
 
-# git pull and make
+# git clone and make
+git clone....
 ```
 make clean
 make
