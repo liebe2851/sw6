@@ -17,7 +17,9 @@ $result= mysqli_query($connect, $query1);
 
 ?>
 
+
 <form use:form>
+
     <div class="main_pic_bg">
         <div class="city_edit"> 
 	    <h1>자산 관리</h1>
@@ -73,7 +75,7 @@ $total--;	}?>
 <a class="test_manage_btn" href="/groupinvite.php">그룹초대</a>
 <a class="test_manage_btn" href="/write.php">메모작성</a>
 <a class="test_manage_btn" href="/memo.php">메모보기</a>
-
+<a class="test_manage_btn" href="/logout.php" >로그아웃</a>
 	</div>
     </div>
 </form>
