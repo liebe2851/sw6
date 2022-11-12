@@ -15,6 +15,7 @@ sudo /etc/init.d/mysql start
 
 # MYSQL
 ### start mysql
+
 ```
 create user root@'%' identified by 'sjoo';
 FLUSH PRIVILEGES;
@@ -39,7 +40,12 @@ cd /var/www/html
 you can see Apache2 Ubuntu Default Page on localhost
 
 # git clone and make
-git clone....
+you must do it in **/var/www/html**
+
+```
+git clone https://github.com/liebe2851/sw6.git
+```
+
 ```
 make clean
 make
@@ -47,7 +53,7 @@ make
 
 
 
-## My server
+## My server! :)
 http://13.209.70.52/
 
 일단 제 서버에 올라 와 있으니 잘 작동하는지 기능 비교하는 용도로만 사용해주세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
