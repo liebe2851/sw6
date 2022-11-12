@@ -5,6 +5,7 @@ sudo apt-get upgrade
 sudo apt-get install mysql-server
 sudo apt-get install apache2 
 sudo apt-get install php
+sudo apt-get install libmysqlclient-dev
 ```
 
 if you can't start mysql
@@ -29,7 +30,13 @@ create table group_user(`group` char(100),user char(100));
 create table board(memo text(100),id char(100));
 ```
 
-#Apache
+# Apache
+```
+sudo service apache2 restart
+```
+you can see Apache2 Ubuntu Default Page on localhost
+
+# git pull
 
 
 
