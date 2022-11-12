@@ -47,10 +47,10 @@ make
 
 
 
-
+## My server
 http://13.209.70.52/
 
-안녕하세요...
+일단 제 서버에 올라 와 있으니 잘 작동하는지 기능 비교하는 용도로만 사용해주세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
 
 aws free 티어 간당간당해요
 
@@ -58,6 +58,7 @@ aws free 티어 간당간당해요
 상용 툴 쓰지 말아주세요
 
 저 10만원 빠져나가ㅏ요....
+50만원 일수도...
 
 hi
 
@@ -67,15 +68,7 @@ If you use python script or automatic tool, it will cost some payment..
 
 Please use automatic tool or script on your computer or local environment.
 
+Please use it only to check if it works the same as the local environment.
+
 thank you!
  
-### compile option
-
-```
-gcc -z execstack -fno-stack-protector -z norelro -g -O0 -o login  login.c `mysql_config --cflags --libs`
-
-```
-모두 같은 옵션으로 컴파일 했습니다.
-
-
-
