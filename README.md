@@ -45,8 +45,13 @@ you must do it in **/var/www/html**
 ```
 git clone https://github.com/liebe2851/sw6.git
 ```
+then you can see our login page in **localhost/sw6/index.php**
+
+but you can't login
+
 
 ```
+cd sw6
 make clean
 make
 ```
