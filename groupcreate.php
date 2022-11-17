@@ -46,7 +46,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
     $pw = $_POST['pw'];
     $pw_check = $_POST['pw_check'];
-    $name=htmlentities($name);
+    $name = preg_replace('/[^A-Za-z0-9 ]/', '', $name);//untintended patch
+    $pw_check = preg_replace('/[^A-Za-z0-9 ]/', '', $pw_check);//unintended patch
     $id = preg_replace('/[^A-Za-z0-9 ]/', '', $id);
     $pw = preg_replace('/[^A-Za-z0-9 ]/', '', $pw);
     $user_id=$_SESSION['id'];
