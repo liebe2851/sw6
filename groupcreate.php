@@ -42,15 +42,28 @@ if($_SESSION["connected"]==1){?>
 <?php
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
+	$name = $_POST['name'];
+	$name= str_replace(' ' ,'',$name);
     $id = $_POST['id'];
+    $id=str_replace(' ' ,'',$id);
     $pw = $_POST['pw'];
+    $pw=str_replace(' ' ,'',$pw);
     $pw_check = $_POST['pw_check'];
-    $name = preg_replace('/[^A-Za-z0-9 ]/', '', $name);//untintended patch
-    $pw_check = preg_replace('/[^A-Za-z0-9 ]/', '', $pw_check);//unintended patch
-    $id = preg_replace('/[^A-Za-z0-9 ]/', '', $id);
-    $pw = preg_replace('/[^A-Za-z0-9 ]/', '', $pw);
+    $pw_check= str_replace(' ' ,'',$pw_check);
+    $name = preg_replace('/[^A-Za-z0-9]/', '', $name);//untintended patch
+    $pw_check = preg_replace('/[^A-Za-z0-9]/', '', $pw_check);//unintended patch
+    $id = preg_replace('/[^A-Za-z0-9]/', '', $id);
+    $pw = preg_replace('/[^A-Za-z0-9]/', '', $pw);
     $user_id=$_SESSION['id'];
+
+    if (strlen($id)<3||strlen($pw)<3||strlen($name)<3)
+    {
+?>
+	    <script>alert(" 너무 짧아용");
+	    history.back();
+	    </script>
+<?php }
+else{
     if($pw==$pw_check){	
     $argument = "./groupcreate ". $id . " ". $pw ." ". $pw_check ." ". $name ." ".$user_id;
     exec($argument,$output,$ret);
@@ -76,6 +89,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     
+}
 }
 }
 ?>

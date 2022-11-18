@@ -21,8 +21,9 @@ session_start();
     $pw = $_POST['pw'];
     
     $id = preg_replace('/[^A-Za-z0-9% ]/', '', $id);
+    $id=str_replace(' ' ,'',$id);
     $pw = preg_replace('/[^A-Za-z0-9% ]/', '', $pw);
-    
+    $pw=str_replace(' ','',$pw);
     //construct command which will be passed to exec
     $argument = "./login ". $id . " ". $pw;
     

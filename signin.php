@@ -40,14 +40,28 @@
 <?php
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $id = $_POST['id'];
-    $pw = $_POST['pw'];
-    $pw_check = $_POST['pw_check'];
+	$name = $_POST['name'];
+	$name= str_replace(' ' ,'',$name);
+	$id = $_POST['id'];
+	$id=str_replace(' ' ,'', $id);
+	$pw = $_POST['pw'];
+	$pw=str_replace(' ','',$id);
+	$pw_check = $_POST['pw_check'];
+	$pw_check=str_replace(' ','', $id);
         
     $id = preg_replace('/[^A-Za-z0-9 ]/', '', $id);
     $pw = preg_replace('/[^A-Za-z0-9 ]/', '', $pw);
-
+	
+    if(strlen($id)<3||strlen($pw)<3||strlen($name)<3)
+    {
+?>
+<script>alert("더 길게 입력 해 주세요!");
+	    history.back();
+	    </script>
+<?php
+	
+    }
+    else{
     if($pw==$pw_check){	
     $argument = "./signin ". $id . " ". $pw ." ". $pw_check ." ". $name;
     exec($argument,$output,$ret);
@@ -69,8 +83,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	    alert("id is already exist");
 		    </script>
 		<?php
-	    system($name);
-	    echo $name;
+
 	    
     }
     }
@@ -81,6 +94,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     
 echo json_encode($output);    
 }
-
+}
 ?>
 
