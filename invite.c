@@ -71,18 +71,23 @@ int main (int argc, char **argv) {
 	    printf("query2 failed \n");
 	    printf("%s",group_command);
 	    mysql_close(con2);
+	    mysql_close(con3);
+	    musql_clse(conn);
 	    return 0;}
     
     
 	    else{
 		    mysql_close(con2);
-    mysql_close(conn);
+    		mysql_close(conn);
+		mysql_close(con3);
     return 11;
     
     }
   }
   else {
     mysql_close(conn);
+    mysql_close(con2);
+    mysql_close(con3);
   //  printf("%s",mysql_num_rows(result2));
 // printf("%s",check_command);
     strcpy(username,argv[1]);
