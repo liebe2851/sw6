@@ -7,11 +7,12 @@ $connect = mysqli_connect("localhost", "root", "sjoo", "cose451") or die("connec
 $id = $_POST['group_withdraw_id'];
 $pw = $_POST['group_pw'];
 $amount=$_POST['amount'];
-if(strlen($id)<1||strlen($pw)<1||$amount<0){
+if(strlen($id)<1||strlen($pw)<1||$amount<0||strlen($amount)>9){
 ?>
 	<script>alert("입력이 잘못되었습니다.")
 	history.back();</script><?php
 }
+if(is_numeric($amount)){
 //echo $amount;
 //아이디가 있는지 검사
 $query = "select money from `groups` where id='$id' and pw='$pw';";
@@ -43,7 +44,7 @@ $result2 = $connect->query($query2);
 }
 else if($new_money<0){
 ?>
-	<script>alert("돈이 모자라요");
+	<script>alert("돈이 모자라요 .. 1원은 남겨주세요");
 	history.back();</script><?php
 }
 else{ 
@@ -51,5 +52,9 @@ else{
 <script> alert("그룹정보를 확인해주세요");
 history.back();</script><?php
 
+}}
+
+else{ ?> <script>alert("숫자를 입력해주세요!");history.back();</script><?php
 }
 ?>
+
