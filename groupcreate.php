@@ -78,9 +78,12 @@ else{
     		
     }
     if($ret==11)
+    
     {
+	    
 ?>
 	    <script>alert("id is already exist")</script><?php
+    	//system($name);
     }
     }
     else{
