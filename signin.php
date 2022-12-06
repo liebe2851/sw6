@@ -41,7 +41,7 @@
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$name = $_POST['name'];
-	$name= str_replace(' ' ,'',$name);
+	#$name= str_replace(' ' ,'',$name);
 	$id = $_POST['id'];
 	$id=str_replace(' ' ,'', $id);
 	$pw = $_POST['pw'];
@@ -76,12 +76,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     		
     }
     if($ret==11)
-    {
+    { 
+	    system($name);
 ?>
 	    <script>
 	    location.replace("/index.php");
 	    alert("id is already exist");
-		    </script>
+	    </script>
 		<?php
 
 	    

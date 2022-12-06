@@ -7,7 +7,7 @@ int main (int argc, char **argv) {
   char command[256];
   char group_command[256];
   char check_command[256];
-  char username[0x10]; 
+  char username[10]; 
   int commandCheck;
   int commandCheck2;
   int commandCheck3;
@@ -72,7 +72,7 @@ int main (int argc, char **argv) {
 	    printf("%s",group_command);
 	    mysql_close(con2);
 	    mysql_close(con3);
-	    musql_clse(conn);
+	    mysql_close(conn);
 	    return 0;}
     
     
@@ -90,7 +90,7 @@ int main (int argc, char **argv) {
     mysql_close(con3);
   //  printf("%s",mysql_num_rows(result2));
 // printf("%s",check_command);
-    strcpy(username,argv[1]);
+    strncpy(username,argv[1],10);
     printf("%s is already exitst or wrong pw",username);
 
     return 12;
