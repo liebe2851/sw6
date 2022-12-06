@@ -5,6 +5,7 @@ session_start();
 $memo=$_POST['memo'];
 $id = $_SESSION['id'];
 $memo=str_replace("'","",$memo);
+$memo = preg_replace('/[^A-Za-z0-9 ]/', '', $memo);
 $query = "INSERT INTO board values('$memo', '$id');";
 
 $result = $connect->query($query);
