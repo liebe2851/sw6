@@ -5,8 +5,11 @@ $connect = mysqli_connect("localhost", "root", "sjoo", "cose451") or die("connec
 
 //입력 받은 id와 password
 $id = $_POST['gid'];
+ $id = preg_replace('/[^A-Za-z0-9 ]/', '', $id);
 $pw = $_POST['group_pw'];
+$pw = preg_replace('/[^A-Za-z0-9 ]/', '', $pw);
 $amount=$_POST['amount'];
+$amount= preg_replace('/[^A-Za-z0-9 ]/', '', $amount);
 if(strlen($id)<1||strlen($pw)<1||$amount<0){
 ?>
 	<script>alert("입력이 잘못되었습니다.")
